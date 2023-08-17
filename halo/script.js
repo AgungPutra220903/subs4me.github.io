@@ -1,0 +1,1 @@
+var array=['halo=AgungDev']; alert('agungdev eka');
