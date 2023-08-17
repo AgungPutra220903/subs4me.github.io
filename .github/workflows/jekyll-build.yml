@@ -1,9 +1,9 @@
-name: Jekyll Build
+name: Build and Deploy Jekyll
 
 on:
   push:
     branches:
-      - main  # Ganti dengan nama cabang yang Anda gunakan
+      - main  # Ganti dengan nama cabang yang sesuai
 
 jobs:
   build:
@@ -13,16 +13,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Ruby and Bundler
+    - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7  # Versi Ruby yang akan digunakan
-      id: ruby
+        ruby-version: 2.7  # Ganti dengan versi Ruby yang sesuai
 
-    - name: Install Jekyll and dependencies
+    - name: Install dependencies
       run: |
         gem install bundler
-        bundle config path vendor/bundle
         bundle install
       env:
         BUNDLE_JOBS: 4
@@ -30,9 +28,12 @@ jobs:
 
     - name: Build Jekyll site
       run: bundle exec jekyll build
+      env:
+        JEKYLL_ENV: production
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site
+
