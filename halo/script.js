@@ -1,1 +1,2 @@
-var array=''; alert('agungdev eka');
+var array=''; 
+alert('agungdev eka');
