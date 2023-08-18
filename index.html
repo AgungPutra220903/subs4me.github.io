@@ -1,50 +1,692 @@
-<html>
-<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <style>
-  .loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Tambahkan ini untuk mengatur tata letak vertical */
-    z-index: 9999;
+.lds-spinner {
+      color: official;
+      display: inline-block;
+      position: relative;
+      width: 64px;
+      height: 64px;
+    }
+    .lds-spinner div {
+      transform-origin: 32px 32px;
+      animation: lds-spinner 1.2s linear infinite;
+    }
+    .lds-spinner div:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 29px;
+      width: 5px;
+      height: 14px;
+      border-radius: 20%;
+      background: #000;
+    }
+    .lds-spinner div:nth-child(1) {
+      transform: rotate(0deg);
+      animation-delay: -1.1s;
+    }
+    .lds-spinner div:nth-child(2) {
+      transform: rotate(30deg);
+      animation-delay: -1s;
+    }
+    .lds-spinner div:nth-child(3) {
+      transform: rotate(60deg);
+      animation-delay: -0.9s;
+    }
+    .lds-spinner div:nth-child(4) {
+      transform: rotate(90deg);
+      animation-delay: -0.8s;
+    }
+    .lds-spinner div:nth-child(5) {
+      transform: rotate(120deg);
+      animation-delay: -0.7s;
+    }
+    .lds-spinner div:nth-child(6) {
+      transform: rotate(150deg);
+      animation-delay: -0.6s;
+    }
+    .lds-spinner div:nth-child(7) {
+      transform: rotate(180deg);
+      animation-delay: -0.5s;
+    }
+    .lds-spinner div:nth-child(8) {
+      transform: rotate(210deg);
+      animation-delay: -0.4s;
+    }
+    .lds-spinner div:nth-child(9) {
+      transform: rotate(240deg);
+      animation-delay: -0.3s;
+    }
+    .lds-spinner div:nth-child(10) {
+      transform: rotate(270deg);
+      animation-delay: -0.2s;
+    }
+    .lds-spinner div:nth-child(11) {
+      transform: rotate(300deg);
+      animation-delay: -0.1s;
+    }
+    .lds-spinner div:nth-child(12) {
+      transform: rotate(330deg);
+      animation-delay: 0s;
+    }
+    @keyframes lds-spinner {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .fade-in {
+      animation: fade-in 0.3s ease-in;
+    }
+
+    .fade-out {
+      animation: fade-out 0.3s ease-out;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fade-out {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+/* Mengatur tampilan tombol */
+input[type="file"]::file-selector-button {
+  background-color: #007bff;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Mengubah tampilan tombol saat di hover */
+input[type="file"]::file-selector-button:hover {
+  background-color: #0056b3;
+}
+
+/* Menyembunyikan default file name */
+input[type="file"]::file-caption-name {
+  display: none;
+}
+
+/* Mengatur tampilan label tombol */
+input[type="file"]::file-selector-button-label {
+  display: flex;
+  align-items: center;
+}
+
+/* Menambahkan ikon upload */
+input[type="file"]::file-selector-button-label::before {
+  content: '\f093';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Membuat tampilan input file lebih kompak */
+input[type="file"] {
+  padding: 12px;
+  width: 280px;
+}
+
+
+/* Gaya dasar */
+.form-control {
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 16px;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  padding: 12px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* Efek hover saat kursor berada di atas elemen */
+.form-control:hover {
+  border-color: #ff5733;
+}
+
+/* Efek saat elemen dalam fokus (diklik) */
+.form-control:focus {
+  border-color: #ff5733;
+  outline: none;
+  box-shadow: 0 0 10px #ff5733;
+}
+
+/* Gaya placeholder (teks "Enter Your Title...") */
+.form-control::placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+/* Gaya untuk elemen disabled */
+.form-control:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Gaya untuk elemen yang valid */
+.form-control:valid {
+  border-color: #2ecc71;
+  box-shadow: 0 0 10px #2ecc71;
+}
+
+/* Gaya untuk elemen yang tidak valid */
+.form-control:invalid {
+  border-color: #e74c3c;
+  box-shadow: 0 0 10px #e74c3c;
+}
+
+/* Gaya untuk elemen yang diisi dengan data */
+.form-control:not(:placeholder-shown) {
+  border-color: #95a5a6;
+}
+  
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .flex-container .col {
+      flex: 1 0 50%;
+      padding: 5px;
+    }
+    .btn-custom {
+     height:50px;
+      width: 100%;
+      font-size: 18px;
+      padding: 10px 15px;
+    
+    }
+<
+.
+  /* Customize input fields */
+  .form-control {
+    border-radius: 0;
+    border-color: #ccc;
+    box-shadow: none;
   }
 
-  .loading-spinner {
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid #ffffff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
+  /* Customize file input */
+  .form-control-file {
+    border-radius: 0;
+    border-color: #ccc;
+    box-shadow: none;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
   }
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  /* Customize submit button */
+  .btn-success {
+    border-radius: 0;
+    background-color: #28a745;
+    border-color: #28a745;
   }
 
-  .loading-text {
-    color: white;
-    font-size: 20px;
-    margin-top: 10px;
+  .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
   }
-</style>
-</head>
-<body>
-<div class="loading-overlay" id="loadingOverlay">
-  <div class="loading-spinner"></div>
-  <div class="loading-text">Redirect...</div>
+
+  /* Customize shortlink container */
+  #shortlinkContainer {
+    margin-top: 1rem;
+  }
+
+  /* Customize loading indicator */
+  #loadingIndicator {
+    margin-top: 1rem;
+  }
+
+.container label{color:white;}
+    .form-container {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .url-input-group {
+      margin-bottom: 10px;
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    #customSwitchLabel {
+      margin-bottom: 10px;
+    }
+    #fotoInputContainer {
+      margin-top: 20px;
+    }
+    .custom-file-label::after {
+      content: "Pilih Foto";
+    }
+  </style>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="flex-container ">
+        <div class="col">
+          <button class="btn btn-dark btn-sm btn-custom" onclick="addInputGroup('fab fa-youtube', 'Url Channel', 'subs', 'https?://.+')">
+            <i class="fab fa-youtube"></i> Add Btn Subs
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn btn-dark btn-sm btn-custom" onclick="addInputGroup('fas fa-download', 'Url Download', 'dwn', 'https?://.+')">
+            <i class="fas fa-download"></i> Add Download
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn btn-dark btn-sm btn-custom" onclick="addInputGroup('fas fa-thumbs-up', 'Url Video', 'like', 'https?://.+')">
+            <i class="fas fa-thumbs-up"></i> Add Like Video
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn btn-dark btn-sm btn-custom" onclick="addInputGroup('fas fa-bell', 'Url Channel', 'lon', 'https?://.+')">
+            <i class="fas fa-bell"></i> Add Sub & Bell
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn btn-dark btn-sm btn-custom" onclick="addInputGroup('fab fa-instagram', 'Url Profile IG', 'ig', 'https?://.+')">
+            <i class="fab fa-instagram"></i> Add Follow IG
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn btn-dark btn-sm btn-custom" onclick="addInputGroup('fab fa-facebook', 'Url Profile FB', 'fb', 'https?://.+')">
+            <i class="fab fa-facebook"></i> Add Follow FB
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn btn-dark btn-sm btn-custom" onclick="addInputGroup('fab fa-tiktok', 'Url Tiktok', 'tiktok', 'https?://.+')">
+            <i class="fab fa-tiktok"></i> Add Follow Tiktok
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn btn-dark btn-sm btn-custom" onclick="addPassword()">
+            <i class="fas fa-lock"></i> Add Password
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<div class="container ">
+  <form id="myForm" method="POST" action="" class="form-container bg-dark font-weight-bold">
+    <div class="form-group">
+      <label for="judul">Your Title</label>
+      <input type="text" placeholder="Enter Your Title..." class="form-control" id="judul" required />
+    </div>
+
+    <div id="sosial">
+      <div class="url-input-group form-group fade-in">
+    <i class="fab fa-youtube text-white"> </i>  <label for="url">Url Channel</label>
+        <div class="input-group d-flex">
+           <input id="subs" placeholder="Url Channel" type="text" class="form-control url-input" pattern="https?://.+" />
+          <div class="input-group-append">
+            <button type="button" class="btn btn-danger remove-button" onclick="removeInput(this)">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%; border-radius: 10px; height: 10px; background: white;"></div><br />
+    <div id="tujuan">
+      <div class="url-input-group form-group fade-in">
+      <i class="fas fa-download text-white"></i>  <label for="url">Url Download</label>
+        <div class="input-group">
+          <input id="dwn" placeholder="Url Download..." type="text" class="form-control url-input" pattern="https?://.+" />
+          <div class="input-group-append">
+            <button type="button" class="btn btn-danger remove-button" onclick="removeInput(this)">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    
+       <div class="form-group text-white">
+      <label for="foto">Tumbnails:</label>
+      <input type="file" class=" rounded form-control-file" id="foto" accept="image/*" />
+    </div>
+    
+    <div class="form-group">
+  <label for="tanggal">Select Expired Link</label>
+  <input type="date" class="form-control" id="tanggal" />
+</div>
+
+      
+    
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Generate Link</button>
+    </div>
+<div id="loadingIndicator" class="text-white" style="display: none; ">
+      <div class="lds-spinner ">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <p>Tunggu sebentar...</p>
+    </div>
+<div id="shortlinkContainer" style="display: none;">
+      <div class="form-group">
+        <label for="shortlink">Shortlink</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="shortlink" readonly />
+          <div class="input-group-append">
+            <button type="button" class="btn btn-primary" onclick="copyLink()">Salin</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+    
 
 <script>
-  const e=document.getElementById("loadingOverlay");function hideLoadingOverlay(){e.style.display="none"}window.location.search.includes("u=")?function redirectToLongURL(){const n=function getQueryParameterByName(e,n){n||(n=window.location.href),e=e.replace(/[\[\]]/g,"\\$&");const o=new RegExp("[?&]"+e+"(=([^&#]*)|&|#|$)").exec(n);return o?o[2]?decodeURIComponent(o[2].replace(/\+/g," ")):"":null}("u");n&&(!function showLoadingOverlay(){e.style.display="flex"}(),fetch("https://api.github.com/repos/AgungPutra220903/SkinMl/contents/shortlink.json",{method:"GET",headers:{Authorization:"Bearer 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"}}).then((e=>e.json())).then((e=>{const o=atob(e.content),t=JSON.parse(o);if(t[n]){const e=t[n];window.location.href=e}else hideLoadingOverlay()})).catch((e=>{hideLoadingOverlay()})))}():hideLoadingOverlay();
-</script
-    </body>
-  </html>
+  var fotoInputVisible = false;
+
+  function addInputGroup(iconClass, label, id, pattern) {
+  var inputContainer = document.getElementById('sosial');
+
+  var urlInputGroup = document.createElement('div');
+  urlInputGroup.className = 'url-input-group form-group fade-in';
+  urlInputGroup.innerHTML = `
+    <i class="${iconClass} text-white"></i> <label for="url">${label}</label>
+    <div class="input-group">
+      <input id="${id}" placeholder="${label}..." type="text" class="form-control url-input" pattern="${pattern}">
+      <div class="input-group-append">
+        <button type="button" class="btn btn-danger remove-button" onclick="removeInput(this)">Remove</button>
+      </div>
+    </div>
+  `;
+
+  inputContainer.appendChild(urlInputGroup);
+}
+  
+ //Fungsi Password
+var passwordAdded = false;
+
+  function addPassword() {
+    if (!passwordAdded) {
+      var inputContainer = document.getElementById('tujuan');
+
+      var passwordInputGroup = document.createElement('div');
+      passwordInputGroup.className = 'url-input-group form-group fade-in';
+      passwordInputGroup.innerHTML = `
+        <i class="fas fa-lock text-white"></i> <label for="password">Password</label>
+        <div class="input-group">
+          <input id="password" placeholder="Enter Password..." type="password" class="form-control url-input" />
+          <div class="input-group-append">
+            <button type="button" class="btn btn-danger remove-button" onclick="removeInput(this)">Remove</button>
+          </div>
+        </div>
+      `;
+
+      inputContainer.appendChild(passwordInputGroup);
+      passwordAdded = true;
+    }
+  }
+  
+
+  // Fungsi untuk menampilkan atau menyembunyikan inputan file foto
+  function showFotoInput() {
+    var fotoInputContainer = document.getElementById('fotoInputContainer');
+    var fotoInput = document.getElementById('foto');
+
+    if (!fotoInputVisible) {
+      fotoInputContainer.style.display = 'block';
+      fotoInputVisible = true;
+    } else {
+      fotoInputContainer.style.display = 'none';
+      fotoInputVisible = false;
+    }
+  }
+
+  // Fungsi untuk menghapus inputan URL
+  function removeInput(button) {
+    var urlInputGroup = button.closest('.url-input-group');
+    urlInputGroup.parentNode.removeChild(urlInputGroup);
+  }
+
+  // Fungsi untuk menyalin link ke clipboard dan menampilkan pesan
+  function copyLink() {
+    var shortlinkInput = document.getElementById('shortlink');
+    shortlinkInput.select();
+    shortlinkInput.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+
+    Swal.fire({
+      title: 'Berhasil!',
+      text: 'Tautan berhasil disalin!',
+      icon: 'success',
+      timer: 2000,
+      showConfirmButton: false
+    });
+  }
+
+  // Fungsi untuk menampilkan atau menyembunyikan indikator loading
+  function showLoadingIndicator(show) {
+    var loadingIndicator = document.getElementById('loadingIndicator');
+    if (show) {
+      loadingIndicator.style.display = 'block';
+    } else {
+      loadingIndicator.style.display = 'none';
+    }
+  }
+
+  // Fungsi untuk menampilkan atau menyembunyikan inputan hasil link
+  function showShortlinkContainer(show) {
+    var shortlinkContainer = document.getElementById('shortlinkContainer');
+    if (show) {
+      shortlinkContainer.style.display = 'block';
+    } else {
+      shortlinkContainer.style.display = 'none';
+    }
+  }
+
+  // Fungsi untuk mengenerate link
+// Replace 'YOUR_GITHUB_API_ACCESS_TOKEN', 'YOUR_USERNAME', and 'YOUR_REPO_NAME' with your actual GitHub API access token, GitHub username, and repository name.
+var githubAccessToken = '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';
+var githubUsername = 'AgungPutra220903';
+var githubRepoName = 'SkinMl';
+
+function uploadImageToGitHub(file) {
+  return new Promise(function(resolve, reject) {
+    var reader = new FileReader();
+
+    reader.onload = function(event) {
+      var fileContent = event.target.result.split(',')[1]; // Extract base64 content
+
+      var fileName = file.name;
+      var filePath = 'subs4unlock/' + fileName;
+      
+      // Check if the file with the same name exists
+      fetch('https://api.github.com/repos/' + githubUsername + '/' + githubRepoName + '/contents/' + filePath, {
+        method: 'GET',
+        headers: {
+          'Authorization': 'token ' + githubAccessToken,
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.message !== 'Not Found') {
+            // If file with the same name exists, add a random ID to the file name
+            const randomID = Math.random().toString(36).substring(7);
+            fileName = randomID + '-' + fileName;
+            filePath = 'subs4unlock/' + fileName;
+          }
+
+          var fileData = {
+            message: 'Upload image',
+            content: fileContent
+          };
+
+          // Upload the file with the updated file name
+          fetch('https://api.github.com/repos/' + githubUsername + '/' + githubRepoName + '/contents/' + filePath, {
+            method: 'PUT',
+            headers: {
+              'Authorization': 'token ' + githubAccessToken,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(fileData)
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Failed to upload image to GitHub.');
+              }
+              return response.json();
+            })
+            .then(data => {
+              if (!data.content || !data.content.download_url) {
+                throw new Error('Invalid response from GitHub API.');
+              }
+
+              var imageURL = data.content.download_url;
+              resolve(imageURL);
+            })
+            .catch(error => {
+              reject(error);
+            });
+        })
+        .catch(error => {
+          reject(error);
+        });
+    };
+
+    reader.readAsDataURL(file);
+  });
+}
+
+
+function generateLink() {
+  showShortlinkContainer(false);
+  showLoadingIndicator(true);
+
+  var judulInput = document.getElementById('judul');
+  var judulValue = judulInput.value;
+  var encodedJudul = btoa(judulValue); // Base64 encode judul
+
+  var tanggalInput = document.getElementById('tanggal');
+  var tanggalValue = tanggalInput.value;
+  var encodedTanggal = btoa(tanggalValue); // Base64 encode tanggal
+
+  var urlInputs = document.getElementsByClassName('url-input');
+  var inputCount = {};
+  var urlArray = [];
+  var urlCounter = {};
+
+  for (var i = 0; i < urlInputs.length; i++) {
+    if (urlInputs[i].value) {
+      var inputId = urlInputs[i].id;
+      if (!inputCount[inputId]) {
+        inputCount[inputId] = 1;
+      } else {
+        inputCount[inputId]++;
+      }
+      var encodedUrl = btoa(urlInputs[i].value); // Base64 encode URL
+      var parameterName = inputId + (inputCount[inputId] > 1 ? inputCount[inputId] : '');
+
+      // Update the URL counter
+      if (!urlCounter[inputId]) {
+        urlCounter[inputId] = 1;
+      } else {
+        urlCounter[inputId]++;
+      }
+      parameterName = inputId + urlCounter[inputId];
+
+      urlArray.push({ id: parameterName, value: encodedUrl });
+    }
+  }
+
+  var fotoInput = document.getElementById('foto');
+  var fotoFile = fotoInput.files[0];
+
+  if (fotoFile) {
+    uploadImageToGitHub(fotoFile)
+      .then(imageURL => {
+        var encodedImageURL = btoa(imageURL); // Base64 encode URL
+
+        var queryParameters = [];
+        queryParameters.push('judul=' + encodeURIComponent(encodedJudul));
+        queryParameters.push('tanggal=' + encodeURIComponent(encodedTanggal));
+        queryParameters.push('foto=' + encodeURIComponent(encodedImageURL));
+
+        for (var j = 0; j < urlArray.length; j++) {
+          var urlParam = urlArray[j].id + '=' + encodeURIComponent(urlArray[j].value);
+          queryParameters.push(urlParam);
+        }
+
+        var targetURL = 'https://www.subs4unlock.com/p/create.html' + '?' + queryParameters.join('&');
+         window.location.href = targetURL;
+        // Use Firebase Dynamic Links API for short link generation
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        showLoadingIndicator(false);
+      });
+  } else {
+    var queryParameters = [];
+    queryParameters.push('judul=' + encodeURIComponent(encodedJudul));
+    queryParameters.push('tanggal=' + encodeURIComponent(encodedTanggal));
+
+    for (var j = 0; j < urlArray.length; j++) {
+      var urlParam = urlArray[j].id + '=' + encodeURIComponent(urlArray[j].value);
+      queryParameters.push(urlParam);
+    }
+
+    var targetURL = 'https://www.subs4unlock.com/p/create.html' + '?' + queryParameters.join('&');
+    
+    window.location.href = targetURL;
+    // Use Firebase Dynamic Links API for short link generation
+  }
+}
+
+// ... the rest of your existing code ...
+// Mengikat fungsi generateLink() ke event onSubmit form
+document.getElementById('myForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  generateLink();
+});
+
+        </script
