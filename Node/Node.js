@@ -2,7 +2,7 @@ const simpleGit = require('simple-git');
 const path = require('path');
 
 // Path ke direktori repositori lokal Anda
-const repoPath = path.join(__dirname, '');
+const repoPath = path.join(__dirname, '/');
 
 // Inisialisasi repositori dengan path ke direktori repositori lokal Anda
 const git = simpleGit(repoPath);
