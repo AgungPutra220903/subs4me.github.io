@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Panelku Upload</title>
+<style>
+  /* Gaya untuk tombol "Mulai" dan "Cek Otorisasi" */
+  button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+/* Gaya untuk tautan Instagram */
+a {
+  color: #833ab4; /* Warna teks tautan */
+  text-decoration: none; /* Hapus garis bawah pada tautan */
+  position: relative; /* Mengatur posisi relatif */
+  transition: color 0.3s ease; /* Efek transisi warna saat dihover */
+}
+
+a::before {
+  content: ""; /* Menambahkan isi pada elemen pseudo */
+  position: absolute; /* Mengatur posisi absolut */
+  width: 100%; /* Lebar 100% dari tautan */
+  height: 2px; /* Tinggi garis bawah */
+  bottom: -3px; /* Menggeser garis bawah ke bawah */
+  background-color: #833ab4; /* Warna garis bawah */
+  transform: scaleX(0); /* Awalnya skala 0 lebar */
+  transform-origin: center; /* Pusat transformasi di tengah */
+  transition: transform 0.3s ease; /* Efek transisi skala */
+}
+
+a:hover {
+  color: #6a0dad; /* Warna teks tautan saat dihover */
+}
+
+a:hover::before {
+  transform: scaleX(1); /* Skala lebar menjadi penuh saat dihover */
+}
+
+
+  /* Gaya untuk kontainer */
+  #authContainer, #formContainer {
+    margin-top: 20px;
+  }
+
+  /* Gaya untuk elemen formulir */
+  #jsonForm {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-top: 0;
+    color: #333;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+
+  input[type="text"]:focus,
+  input[type="date"]:focus {
+    border-color: #007bff;
+  }
+
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  /* Gaya responsif */
+  @media (max-width: 768px) {
+    #jsonForm {
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      padding: 10px;
+      margin: 6px auto;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jsonForm {
+      max-width: 100%;
+    }
+  }
+</style>
+
+</head>
+<body>
+<button id="authButton">Mulai</button>
+<div id="authContainer" style="display: none;">
+  <label for="username">Username:</label>
+  <input type="text" id="username" required><br><br>
+  <button id="checkAuthButton">Cek Otorisasi</button><br><br>
+  <!-- Tambahkan tautan menuju akun Instagram di bawah ini -->
+  <a href="https://instagram.com/agungeka_22?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D">Daftar Dulu</a>
+</div>
+
+
+  <div id="formContainer" style="display: none;">
+    <form id="jsonForm">
+      <h1>PANELKU VIRAL VIDEO</h1>
+      <label for="judul">Judul:</label>
+      <input type="text" id="judul" name="judul" required><br><br>
+      <label for="img">URL Gambar:</label>
+      <input type="text" id="img" name="img" required><br><br>
+      <label for="dwn">URL Download:</label>
+      <input type="text" id="dwn" name="dwn" required><br><br>
+      <label for="subs">URL Video YouTube:</label>
+      <input type="text" id="subs" name="subs" required><br><br>
+      <label for="creator">Creator:</label>
+      <input type="text" id="creator" name="creator" required><br><br>
+      <label for="date">Tanggal:</label>
+      <input type="date" id="date" name="date" required><br><br>
+      <button type="submit">Upload JSON</button>
+    </form>
+  </div>
+
+  <script>
+    const _0x396621=_0x9542;!function(t,n){const e=_0x9542,o=_0x36a7();for(;;)try{if(819672===-parseInt(e(493))/1+-parseInt(e(466))/2+parseInt(e(457))/3*(-parseInt(e(447))/4)+parseInt(e(494))/5*(parseInt(e(469))/6)+-parseInt(e(427))/7+parseInt(e(417))/8+parseInt(e(428))/9)break;o.push(o.shift())}catch(t){o.push(o.shift())}}();const token=_0x396621(495)+_0x396621(458)+_0x396621(467)+_0x396621(484),owner=_0x396621(413)+"p",repo=_0x396621(505),authContainer=document[_0x396621(434)+_0x396621(477)](_0x396621(425)+_0x396621(440)),formContainer=document[_0x396621(434)+_0x396621(477)](_0x396621(464)+_0x396621(440)),authButton=document[_0x396621(434)+_0x396621(477)](_0x396621(483)),checkAuthButton=document[_0x396621(434)+_0x396621(477)](_0x396621(424)+_0x396621(474));function _0x36a7(){const t=["N data","stringify","click","addEventLi","oMueY","content","678gPgqmB","iBAjJtyiY7","bZmCt","style","parse","subs","n/json","formContai","display","1450998wFQrZM","vdddS4Z3K2","push","1501842RddzaA","get","CGhob","XHXhh","none","utton","creator","/main/Auth","ById","json","value","https://ra","VAYnY","Bearer ","authButton","Su1I1d0zkW","KClOb","dwn","idak diizi","img","GMVof","XmWWC","ault","preventDef","1049909jqnMlA","25yUvskl","ghp_XToaek","YxSey","submit","date","ercontent.","GET","nkan.","nxNnb","VZILv","yZXgt","Viral","block","AgungDevlo","xrSvS","usernames","sha","546496TBEKlJ","XKTPW","PUT","applicatio","log","/contents/","i.github.c","checkAuthB","authContai","qYYrv","6225814zfckEk","34224147UlUlqE","om/repos/","username","includes","eHUHy","w.githubus","getElement","https://ap","cDgOH","Upload JSO","jsonForm","com/","ner","rAFTe","Viral.json","Username t","tNsly",".json","judul","28992QhQYeX","OPEN","fwpZr","stener"];return(_0x36a7=function(){return t})()}authButton[_0x396621(454)+_0x396621(450)](_0x396621(453),(()=>{const t=_0x396621,n={tNsly:t(473),XmWWC:t(412)};authButton[t(460)][t(465)]=n[t(444)],authContainer[t(460)][t(465)]=n[t(490)]})),checkAuthButton[_0x396621(454)+_0x396621(450)](_0x396621(453),(async()=>{const t=_0x396621,n={fwpZr:t(430),XHXhh:function(t,n){return t(n)},rAFTe:t(473),eHUHy:t(412),CGhob:t(443)+t(487)+t(501)},e=document[t(434)+t(477)](n[t(449)])[t(479)],o=t(480)+t(433)+t(499)+t(439)+owner+"/"+repo+(t(476)+t(445)),a=await n[t(472)](fetch,o);(await a[t(478)]())[t(415)][t(431)](e)?(authContainer[t(460)][t(465)]=n[t(441)],formContainer[t(460)][t(465)]=n[t(432)]):n[t(472)](alert,n[t(471)])}));const jsonForm=document[_0x396621(434)+_0x396621(477)](_0x396621(438));function _0x9542(t,n){const e=_0x36a7();return(_0x9542=function(t,n){return e[t-=412]})(t,n)}async function uploadJSON(t){const n=_0x396621,e={VAYnY:n(446),xrSvS:n(488),YxSey:n(486),qYYrv:n(462),bZmCt:n(498),KClOb:n(475),cDgOH:function(t,n,e){return t(n,e)},VZILv:n(500),yZXgt:function(t,n){return t(n)},oMueY:function(t,n,e){return t(n,e)},XKTPW:n(419),GMVof:n(420)+n(463),nxNnb:n(437)+n(451)};t[n(492)+n(491)]();const o=new FormData(jsonForm),a={judul:o[n(470)](e[n(481)]),img:o[n(470)](e[n(414)]),dwn:o[n(470)](e[n(496)]),subs:o[n(470)](e[n(426)]),date:o[n(470)](e[n(459)]),create:o[n(470)](e[n(485)])},r=n(435)+n(423)+n(429)+owner+"/"+repo+(n(422)+n(442)),u=await e[n(436)](fetch,r,{method:e[n(503)],headers:{Authorization:n(482)+token}}),s=await u[n(478)](),c=JSON[n(461)](e[n(504)](atob,s[n(456)]));c[n(448)][n(468)](a);const i=await e[n(455)](fetch,r,{method:e[n(418)],headers:{Authorization:n(482)+token,"Content-Type":e[n(489)]},body:JSON[n(452)]({message:e[n(502)],content:e[n(504)](btoa,JSON[n(452)](c)),sha:s[n(416)]})}),x=await i[n(478)]();console[n(421)](x)}jsonForm[_0x396621(454)+_0x396621(450)](_0x396621(497),uploadJSON);
+  </script>
+</body>
+</html>
 
