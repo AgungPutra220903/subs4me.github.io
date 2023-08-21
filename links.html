@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Download Video</title>
+    <style>/* Reset default list styles */
+/* Ganti ukuran, warna, dan gaya sesuai preferensi Anda */
+#searchInput {
+  width: 250px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Ganti warna latar belakang dan teks tombol pencarian sesuai preferensi Anda */
+#searchButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Style for each list item */
+li {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Image style */
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 5px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Title style */
+h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* Date and links style */
+p, a {
+    margin: 5px 0;
+}
+
+/* Button style for links */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+    box-sizing: border-box; /* Menyertakan padding dalam perhitungan dimensi */
+}
+
+h5 {
+    margin: 5px;
+    font-size: 15px;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+    <h1>List Menu</h1>
+<input type="text" id="searchInput" placeholder="Cari Links Berdasarkan Judul...">
+<button id="searchButton">Search</button>
+    <ul id="contentList"></ul>
+
+    <script>
+      const _0x283b53=_0x55cc;!function(t,n){const e=_0x55cc,a=_0x5825();for(;;)try{if(418427===parseInt(e(245))/1+parseInt(e(223))/2*(parseInt(e(238))/3)+-parseInt(e(233))/4+-parseInt(e(207))/5*(parseInt(e(255))/6)+parseInt(e(268))/7+parseInt(e(192))/8*(parseInt(e(263))/9)+-parseInt(e(258))/10*(parseInt(e(230))/11))break;a.push(a.shift())}catch(t){a.push(a.shift())}}();const urlParams=new URLSearchParams(window[_0x283b53(188)][_0x283b53(257)]),dataParam=urlParams[_0x283b53(252)](_0x283b53(218));if(dataParam===_0x283b53(197)){const t=_0x283b53(186)+_0x283b53(194)+_0x283b53(228)+_0x283b53(199)+_0x283b53(208)+_0x283b53(212)+_0x283b53(271);fetch(t)[_0x283b53(219)]((t=>t[_0x283b53(241)]()))[_0x283b53(219)]((t=>{const n=_0x283b53,e={vhSzi:function(t,n){return t(n)},KtXaZ:n(187)+"t"},a=JSON[n(215)](e[n(202)](atob,t[n(224)])),r=document[n(183)+n(200)](e[n(231)]);a[n(197)][n(246)]((t=>{const e=n,a=document[e(248)+e(273)]("li");a[e(195)]=e(213)+e(211)+e(235)+e(204)+t[e(184)]+(e(193)+e(211)+e(211)+e(225)+e(261))+t[e(191)]+(e(190)+e(253)+e(211)+e(211)+e(221)+": ")+t[e(251)]+(e(185)+e(211)+e(211)+e(213)+e(211)+e(235)+e(262)+e(266)+e(236))+'="'+t[e(234)]+(e(274)+e(270)+e(214)+e(213)+e(211)+e(235)+e(262)+e(249)+e(232))+'"'+t[e(226)]+(e(274)+e(229)+e(217)+e(205)+e(211)+e(244)+e(201))+" "+t[e(210)]+(e(240)+e(211)+e(206)),r[e(250)+"d"](a)}))}))[_0x283b53(243)]((t=>{const n=_0x283b53,e={kUETY:n(247)+n(203)};console[n(189)](e[n(260)],t)}))}function _0x55cc(t,n){const e=_0x5825();return(_0x55cc=function(t,n){return e[t-=183]})(t,n)}const searchInput=document[_0x283b53(183)+_0x283b53(200)](_0x283b53(220)+"t");function _0x5825(){const t=["tor","ent",'" target="',"getElement","judul","</p>\n     ","https://ap","contentLis","location","error",'" alt="Ima',"img","5843160nenQMP","</h2>\n    ","i.github.c","innerHTML","querySelec","OPEN","mTbiF","gungDevlop","ById","© Creator:","vhSzi","hing data:","h2>","d</a>\n    ","         ","95lkorGK","/Viral/con","none","create","          ","tents/Vira","\n         ","wnload</a>","parse","input","ri Passwor","data","then","searchInpu","   <p>Date","value","378790sPCNSs","content","    <img s","subs","display","om/repos/A",'_blank">Ca',"363yyShWN","KtXaZ","ger' href=","1700064dqGLrx","dwn","         <","mary' href","stener","12bnFagu","includes","<h5>\n     ","json","textConten","catch","      <h5>","401259FjaPUQ","forEach","Error fetc","createElem","tn btn-dan","appendChil","date","get",'ge">\n     ',"QhoWs","245568sIBOAb","block","search","291770UYRxSb","toLowerCas","kUETY",'rc="',"a class='b","9ZVOjmv","EMXdd","style","tn btn-pri","addEventLi","4862774IhMZnJ","torAll",'_blank">Do',"l.json"];return(_0x5825=function(){return t})()}searchInput[_0x283b53(267)+_0x283b53(237)](_0x283b53(216),(()=>{const t=_0x283b53,n={mTbiF:t(256),EMXdd:t(209),QhoWs:t(187)+"t"},e=document[t(183)+t(200)](n[t(254)])[t(196)+t(269)]("li"),a=searchInput[t(222)][t(259)+"e"]();e[t(246)]((e=>{const r=t;e[r(196)+r(272)]("h2")[r(242)+"t"][r(259)+"e"]()[r(239)](a)?e[r(265)][r(227)]=n[r(198)]:e[r(265)][r(227)]=n[r(264)]}))}));
+      </script>
+</body>
+</html>
