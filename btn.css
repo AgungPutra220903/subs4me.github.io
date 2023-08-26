@@ -17,7 +17,9 @@ button.wc-stu-btn:hover{opacity:0.8;}
 @-webkit-keyframes wcload{0%{transform:rotate(0deg);transform:rotate(0deg)}100%{transform:rotate(360deg);transform:rotate(360deg)}}
 
 button.wc-stu-btn.yt {
-    background-color: red;
+    background-color: #fff;
+    border:3px solid red;
+    
 }
 /* icon tombol */
 
