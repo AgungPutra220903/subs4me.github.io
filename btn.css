@@ -19,6 +19,10 @@ button.wc-stu-btn:hover{opacity:0.8;}
 button.wc-stu-btn.yt {
     background-color: #fff;
     border:2px solid blue;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="red" d="M23,12L20,9V15M2,9V15L5,12L2,9Z" /></svg>');
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 30px;
 }
 
 button.wc-stu-btn.lon {
