@@ -2,7 +2,7 @@
 
 .wc-bxdw-wrap h2{text-align:center;margin-top:0;font-size:20px}
 
-button.wc-stu-btn.lock,button[disabled=disabled]{cursor:not-allowed;background-color:green;}button.wc-stu-btn.lock:hover{opacity:1}
+button.wc-stu-btn.lock,button[disabled=disabled]{cursor:not-allowed;}button.wc-stu-btn.lock:hover{opacity:1}
 
 button.wc-stu-btn{color:black;position:relative;display:flex;justify-content: center;align-items:center;text-align:center;margin:5px auto;padding:10px 25px;outline:0;border:0;border-radius:10px;line-height:20px; font-size:15px;font-family: "Gill Sans", sans-serif;width:100%; font-weight:bold;}
 
@@ -17,6 +17,36 @@ button.wc-stu-btn:hover{opacity:0.8;}
 @-webkit-keyframes wcload{0%{transform:rotate(0deg);transform:rotate(0deg)}100%{transform:rotate(360deg);transform:rotate(360deg)}}
 
 button.wc-stu-btn.yt {
+    background-color: #fff;
+    border:2px solid blue;
+}
+
+button.wc-stu-btn.lon {
+    background-color: #fff;
+    border:2px solid blue;
+}
+
+button.wc-stu-btn.like {
+    background-color: #fff;
+    border:2px solid blue;
+}
+
+button.wc-stu-btn.ig {
+    background-color: #fff;
+    border:2px solid blue;
+}
+
+button.wc-stu-btn.tk {
+    background-color: #fff;
+    border:2px solid blue;
+}
+
+button.wc-stu-btn.fb {
+    background-color: #fff;
+    border:2px solid blue;
+}
+
+button.wc-stu-btn.lock {
     background-color: #fff;
     border:2px solid blue;
 }
