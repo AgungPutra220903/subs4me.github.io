@@ -5,12 +5,6 @@
 
 button.wc-stu-btn.lock,button[disabled=disabled]{cursor:not-allowed;}button.wc-stu-btn.lock:hover{opacity:1}
 
-button.wc-stu-btn[disabled] svg path {
-    fill: green; /* Ubah warna fill sesuai yang diinginkan */
-}
-
-
-
 button.wc-stu-btn{color:black;position:relative;display:flex;justify-content: center;align-items:center;text-align:center;margin:5px auto;padding:10px 25px;outline:0;border:0;border-radius:10px;line-height:20px; font-size:15px;font-family: "Gill Sans", sans-serif;width:100%; font-weight:bold;background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="blue" d="M16 8v-4l8 8-8 8v-4h-5v-8h5zm-7 0h-2v8h2v-8zm-4.014 0h-1.986v8h1.986v-8zm-3.986 0h-1v8h1v-8z"/></svg>');
     background-repeat: no-repeat;
     background-position: right center;
@@ -31,7 +25,10 @@ button.wc-stu-btn.yt {
 
     background-color: #fff;
 
-    border:2px solid blue;
+    border-bottom:3px solid blue;
+    border-left:5px solid blue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 
 }
 
@@ -39,10 +36,9 @@ button.wc-stu-btn.lon {
 
     background-color: #fff;
 
-    border-bottom:2px solid blue;
-    border-left:4px solid blue;
-
-
+    border-bottom:3px solid blue;
+    border-left:5px solid blue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
 
@@ -50,31 +46,36 @@ button.wc-stu-btn.like {
 
     background-color: #fff;
 
-    border:2px solid blue;
-
+    border-bottom:3px solid blue;
+    border-left:5px solid blue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 button.wc-stu-btn.ig {
 
     background-color: #fff;
 
-    border:2px solid blue;
-
+    border-bottom:3px solid blue;
+    border-left:5px solid blue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 button.wc-stu-btn.tk {
 
     background-color: #fff;
 
-    border:2px solid blue;
-
+    border-bottom:3px solid blue;
+    border-left:5px solid blue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 button.wc-stu-btn.fb {
 
     background-color: #fff;
 
-    border:2px solid blue;
+    border-bottom:3px solid blue;
+    border-left:5px solid blue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
 
@@ -82,15 +83,18 @@ button.wc-stu-btn.lock {
 
     background-color: #fff;
 
-    border:2px solid blue;
-
+    border-bottom:3px solid blue;
+    border-left:5px solid blue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 button.wc-stu-btn.ulck {
 
     background-color: #fff;
 
-    border:2px solid green;
+    border-bottom:3px solid blue;
+    border-left:5px solid blue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 /* icon tombol */
