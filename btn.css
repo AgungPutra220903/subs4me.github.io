@@ -39,7 +39,10 @@ button.wc-stu-btn.lon {
 
     background-color: #fff;
 
-    border:2px solid blue;
+    border-bottom:2px solid blue;
+    border-left:4px solid blue;
+
+
 
 }
 
