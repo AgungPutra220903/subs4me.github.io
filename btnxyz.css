@@ -1,0 +1,63 @@
+/* sub2unlock by masdhika.com */
+.masdhika-com{position:relative;text-align:center;display:inline-block;border-radius:5px;border:1px solid #ddd;background-color:#fefefe;color:#48525c;width:100%;padding:10px}
+.masdhika-com button {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 10px auto;
+  padding: 10px 25px;
+  outline: 0;
+  border: 0;
+  line-height: 20px;
+  font-size: 15px;
+  width: calc(80% - 40px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ff5733;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.masdhika-com button:hover {
+  background-color: #e64d27;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.masdhika-com button.lock{
+  background:green;
+}
+.masdhika-com button[disabled]{color:#d2d5db;background:#6c7589;cursor:not-allowed;box-shadow:0 14px 26px -12px #6c7589,0 4px 23px #0000001f,0 8px 10px -5px #40454333}
+.masdhika-com button:before{content:'';padding:10px;z-index:2; center / 12px no-repeat;background-size:16px 16px}
+.masdhika-com button.youtube:before{background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'><path fill='%23fefefe' d='M23.93,11c0-.72,0-1.55-.12-2.51a11.94,11.94,0,0,0-.34-2.28A2.8,2.8,0,0,0,21.4,4.13C20.16,3.79,17,3.6,12,3.6l-1.91.07c-1.32,0-2.75,0-4.31.12a16.42,16.42,0,0,0-3.18.34A2.8,2.8,0,0,0,.53,6.2,23.67,23.67,0,0,0,0,12l.07,1c0,.72,0,1.55.12,2.51A11.94,11.94,0,0,0,.53,17.8,2.8,2.8,0,0,0,2.6,19.87c1.24.34,4.37.53,9.4.53l1.91-.07c1.32,0,2.75,0,4.31-.12a16.42,16.42,0,0,0,3.18-.34,2.8,2.8,0,0,0,2.07-2.07A23.67,23.67,0,0,0,24,12ZM9.6,15.6V8.4L15.83,12Z'/></svg>") center / 12px no-repeat}
+.masdhika-com button.like:before{background:url("data:image/svg+xml,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill='%23fff' d='M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z'/></svg>") center / 12px no-repeat}
+.masdhika-com button.facebook:before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'%3E%3Cpath fill='%23fefefe' d='M21.07,0A2.93,2.93,0,0,1,24,2.93V21.07A2.93,2.93,0,0,1,21.07,24h-5V15H19.2l.59-3.88H16.08V8.57a1.93,1.93,0,0,1,2.18-2.09H20V3.18a20.68,20.68,0,0,0-3-.26c-3.06,0-5.06,1.85-5.06,5.21v2.95H8.49V15h3.4v9h-9A2.93,2.93,0,0,1,0,21.07V2.93A2.93,2.93,0,0,1,2.93,0Z'/%3E%3C/svg%3E") center / 12px no-repeat}
+.masdhika-com button.twitter:before{background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'><path fill='%23fefefe' d='M21.07,0A2.93,2.93,0,0,1,24,2.93V21.07A2.93,2.93,0,0,1,21.07,24H2.93A2.93,2.93,0,0,1,0,21.07V2.93A2.93,2.93,0,0,1,2.93,0ZM9.16,19.9A9.79,9.79,0,0,0,19,10c0-.15,0-.3,0-.44a7.09,7.09,0,0,0,1.74-1.8,7,7,0,0,1-2,.55,3.51,3.51,0,0,0,1.52-1.92,7,7,0,0,1-2.2.84,3.47,3.47,0,0,0-6,2.37,3.42,3.42,0,0,0,.09.79A9.81,9.81,0,0,1,5,6.81a3.54,3.54,0,0,0-.47,1.74,3.46,3.46,0,0,0,1.55,2.88A3.35,3.35,0,0,1,4.55,11v0a3.48,3.48,0,0,0,2.78,3.4,3.34,3.34,0,0,1-.91.12,3.49,3.49,0,0,1-.65-.06A3.43,3.43,0,0,0,9,16.9a7,7,0,0,1-4.3,1.48,5.69,5.69,0,0,1-.83-.05A9.59,9.59,0,0,0,9.16,19.9Z'/></svg>") center / 12px no-repeat}
+.masdhika-com button.instagram:before{background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'><path fill='%23fefefe' d='M7,0H17a7,7,0,0,1,7,7V17a7,7,0,0,1-7,7H7a7,7,0,0,1-7-7V7A7,7,0,0,1,7,0M6.72,2.4A4.31,4.31,0,0,0,2.4,6.72h0V17.28A4.31,4.31,0,0,0,6.72,21.6H17.28a4.31,4.31,0,0,0,4.32-4.32h0V6.72A4.31,4.31,0,0,0,17.28,2.4H6.72M18.3,4.2a1.5,1.5,0,1,1-1.5,1.5,1.5,1.5,0,0,1,1.5-1.5M12,6a6,6,0,1,1-6,6,6,6,0,0,1,6-6m0,2.4A3.6,3.6,0,1,0,15.6,12,3.6,3.6,0,0,0,12,8.4Z'/></svg>") center / 12px no-repeat}
+.masdhika-com button.tk:before{background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'><path fill='%23fefefe' d='M20,0H4A4,4,0,0,0,0,4V20a4,4,0,0,0,4,4H20a4,4,0,0,0,4-4V4A4,4,0,0,0,20,0Zm-4.9,9.35V15A5.19,5.19,0,1,1,9.93,9.85a5.31,5.31,0,0,1,.68.05v2.79a2.45,2.45,0,1,0,1.65,3,2.3,2.3,0,0,0,.1-.69V3.78h2.88a4,4,0,0,0,4,4h0v2.88A7.1,7.1,0,0,1,15.11,9.35Z'/></svg>") center / 12px no-repeat}
+.masdhika-com button.linked:before{background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'><path fill='%23fefefe' d='M22.16,0H1.84A1.74,1.74,0,0,0,.08,1.72V22.28A1.74,1.74,0,0,0,1.84,24H22.16a1.74,1.74,0,0,0,1.76-1.72V1.72A1.74,1.74,0,0,0,22.16,0ZM7.3,20.09H3.7V9.25H7.3ZM5.5,7.77h0a1.86,1.86,0,0,1-2-1.87A1.88,1.88,0,0,1,5.53,4a1.88,1.88,0,1,1,0,3.74ZM20.29,20.09h-3.6v-5.8c0-1.45-.52-2.45-1.82-2.45A2,2,0,0,0,13,13.16a2.34,2.34,0,0,0-.12.88v6.05H9.3s0-9.82,0-10.84h3.6v1.54A3.57,3.57,0,0,1,16.15,9c2.37,0,4.14,1.55,4.14,4.88v6.21Z'/></svg>") center / 12px no-repeat}
+.masdhika-com button.lon:before{background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='25' height='25'><path fill='%23fefefe' d='M381.7,225.9c0-97.6-52.5-130.8-101.6-138.2c0-0.5,0.1-1,0.1-1.6c0-12.3-10.9-22.1-24.2-22.1c-13.3,0-23.8,9.8-23.8,22.1 c0,0.6,0,1.1,0.1,1.6c-49.2,7.5-102,40.8-102,138.4c0,113.8-28.3,126-66.3,158h384C410.2,352,381.7,339.7,381.7,225.9z'/><path d='M256.2,448c26.8,0,48.8-19.9,51.7-43H204.5C207.3,428.1,229.4,448,256.2,448z'/></svg>") center / 12px no-repeat}
+.masdhika-com button.lock:before{background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'><path fill='%23fefefe' d='M12,14a1,1,0,0,1-1-1V11a1,1,0,0,1,2,0v2A1,1,0,0,1,12,14Zm6.55-5.91V5.45A5.46,5.46,0,0,0,13.09,0H10.91A5.46,5.46,0,0,0,5.45,5.45V8.09a5.47,5.47,0,0,0-3.27,5v5.46A5.45,5.45,0,0,0,7.64,24h8.72a5.45,5.45,0,0,0,5.46-5.45V13.09A5.47,5.47,0,0,0,18.55,8.09ZM7.64,5.45a3.27,3.27,0,0,1,3.27-3.27h2.18a3.27,3.27,0,0,1,3.27,3.27V7.64H7.64Zm12,13.1a3.28,3.28,0,0,1-3.28,3.27H7.64a3.28,3.28,0,0,1-3.28-3.27V13.09A3.27,3.27,0,0,1,7.64,9.82h8.72a3.27,3.27,0,0,1,3.28,3.27Z'/></svg>") center / 12px no-repeat}
+.masdhika-com button:after{content:'';padding:10px;z-index:2;background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'><path fill='%23fefefe' d='M7.09,24A2.11,2.11,0,0,1,5.6,20.29L14,11.88,5.6,3.47a2.09,2.09,0,0,1,.23-3,2.08,2.08,0,0,1,2.73,0l10,10a2.1,2.1,0,0,1,0,3l-10,10A2.11,2.11,0,0,1,7.09,24Z'/></svg>") center / 12px no-repeat;background-size:16px 16px}
+.masdhika-com button.loader:after{content:'';padding:10px;z-index:2;background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'%3E%3Cpath fill='%23fefefe' d='M12,0A12,12,0,0,0,.05,10.88a1,1,0,0,0,1,1.12h0a1,1,0,0,0,1-.89,10,10,0,0,1,19.86,0,1,1,0,0,0,1,.89h0a1,1,0,0,0,1-1.12A12,12,0,0,0,12,0Z'%3E%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' dur='1s' from='0 12 12' to='360 12 12' repeatCount='indefinite'/></path></svg>") center / 12px no-repeat;background-size:16px 16px}
+.masdhika-com button.done:after{content:'';padding:10px;z-index:2;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'%3E%3Cpath fill='%23fefefe' d='M7.74,20.93h0a1.58,1.58,0,0,1-1.41-.6L.51,13.71a2,2,0,0,1,.2-2.81,1.94,1.94,0,0,1,2.81.2l4.42,5L20.59,3.67a2,2,0,0,1,2.81,0,2,2,0,0,1,0,2.81L9.14,20.33A2.16,2.16,0,0,1,7.74,20.93Z'/%3E%3C/svg%3E") center / 12px no-repeat;background-size:16px 16px}
+
+.masdhika-com button.done:last-child:before{content:'';padding:10px;z-index:2;background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' data-title='Masdhika.com' viewBox='0 0 24 24'><path fill='%23fefefe' d='M12,17.45a1.09,1.09,0,0,1-1.09-1.09V14.18a1.09,1.09,0,0,1,2.18,0v2.18A1.09,1.09,0,0,1,12,17.45Zm4.36-9.81H7.64V5.45a3.27,3.27,0,0,1,3.27-3.27h2.18a3.28,3.28,0,0,1,3.18,2.46,1.09,1.09,0,1,0,2.14-.38,1,1,0,0,0,0-.17A5.45,5.45,0,0,0,13.09,0H10.91A5.46,5.46,0,0,0,5.45,5.45V8.09a5.47,5.47,0,0,0-3.27,5v5.46A5.45,5.45,0,0,0,7.64,24h8.72a5.45,5.45,0,0,0,5.46-5.45V13.09A5.45,5.45,0,0,0,16.36,7.64Zm3.28,10.91a3.28,3.28,0,0,1-3.28,3.27H7.64a3.28,3.28,0,0,1-3.28-3.27V13.09A3.27,3.27,0,0,1,7.64,9.82h8.72a3.27,3.27,0,0,1,3.28,3.27Z'/></svg>") center / 12px no-repeat;background-size:16px 16px}
+@media screen and (max-width:640px){.masdhika-com button{width:calc(100% - 50px)}}
+.progress-bar-container {
+    width: 85%;
+    background-color: #f0f0f0;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #4caf50;
+    transition: width 0.5s;
+  }
