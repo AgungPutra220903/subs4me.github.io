@@ -14,7 +14,7 @@
   font-size: 15px;
   width: calc(80% - 40px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #ff5733;
+  background-color:blue;
   color: #fff;
   border-radius: 50px;
   cursor: pointer;
@@ -22,6 +22,7 @@
 }
 
 .masdhika-com button:hover {
+  border:5px solid white;
   background-color: #e64d27;
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
