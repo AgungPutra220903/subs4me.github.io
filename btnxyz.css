@@ -1,5 +1,5 @@
 /* sub2unlock by masdhika.com */
-.masdhika-com{position:relative;text-align:center;display:inline-block;border-radius:5px;border:1px solid #ddd;background-color:#fefefe;color:#48525c;width:100%;padding:10px}
+.masdhika-com{position:relative;text-align:center;display:inline-block;border-radius:5px;border:1px solid #ddd;color:#48525c;width:100%;padding:10px}
 .masdhika-com button {
   position: relative;
   display: flex;
@@ -23,7 +23,7 @@
 
 .masdhika-com button:hover {
   border:5px solid white;
-  background-color: #e64d27;
+  background-color: blue;
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
